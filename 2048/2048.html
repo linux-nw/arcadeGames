@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>2048 · Pixel Arcade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="2048.css">
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <header class="topbar">
+    <a href="../Startside/index.html" class="nav-back">←</a>
+    <div class="console-container hover-zone">
+      <span id="text" data-texts="🌀 2048,STRATEGY">2048</span>
+      <span class="console-underscore"></span>
+    </div>
+  </header>
+
+  <main class="pacman-home">
+    <div class="pacman-wrapper">
+
+      <section class="game-panel game-wrapper">
+        <div class="game-container">
+          <div class="game-header">
+            <span>SCORE: <span id="score">0</span></span>
+            <span>BEST: <span id="best">0</span></span>
+            <span>GOAL: <span id="goal">2048</span></span>
+          </div>
+
+          <div class="game-field">
+            <div id="board" class="board"></div>
+          </div>
+
+          <div class="game-footer">
+            <span id="message" class="message">READY!</span>
+            <button id="start-btn" class="start-btn">START</button>
+            <button id="restart-btn" class="restart-btn hidden">RESTART</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="record-panel">
+        <h3>STATISTICS</h3>
+        <div class="stat"><span>GAMES</span><span id="stat-games">0</span></div>
+        <div class="stat"><span>WON</span><span id="stat-won">0</span></div>
+        <div class="stat"><span>WINRATE</span><span id="stat-rate">0%</span></div>
+        <hr style="margin:12px 0; opacity:.3">
+        <div class="stat"><span>HIGH SCORE</span><span id="stat-high">0</span></div>
+        <div class="stat"><span>GOAL</span><span id="stat-goal">2048</span></div>
+        <button id="reset-stats" class="restart-btn">RESET STATS</button>
+        <div class="info-box">
+          <p><strong>ZIEL:</strong> Kombiniere Kacheln, bis du 2048 erreichst.</p>
+          <p><strong>STEUERUNG:</strong> PFEILE = Bewegen | SPACE = Start (vor Spielbeginn) | R = Neustart</p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="controls-footer controls-centered">STRATEGY · KEYS · SLOW</footer>
+
+  <script src="../Startside/console.js"></script>
+  <script src="2048.js"></script>
+</body>
+</html>

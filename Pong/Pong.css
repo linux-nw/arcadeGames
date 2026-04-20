@@ -1,0 +1,361 @@
+@font-face {
+  font-family: "PixelGame";
+  src: url("../fonts/BoldPixels.otf") format("opentype");
+}
+
+:root {
+  --bg-dark: #2d1633;
+  --bg-mid: #642c53;
+  --warm: #eea177;
+  --soft: #edc6d8;
+  --cool: #babdc9;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 1.35rem
+}
+
+body {
+  font-family: "PixelGame", system-ui, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, var(--bg-mid), transparent 60%),
+    linear-gradient(180deg, var(--bg-mid), var(--bg-dark));
+  color: var(--soft);
+  overflow: hidden;
+}
+
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255, 255, 255, .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: .14;
+  pointer-events: none
+}
+
+.topbar {
+  position: relative;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.nav-back {
+  position: absolute;
+  left: 32px;
+  font-size: 4rem;
+  color: var(--soft);
+  text-decoration: none;
+  transition: transform .2s ease, color .2s ease
+}
+
+.nav-back:hover {
+  color: var(--warm);
+  transform: translateX(-6px)
+}
+
+.console-container {
+  display: inline-flex;
+  align-items: center;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 6px;
+  text-shadow: 3px 3px 0 var(--bg-dark), 0 0 14px rgba(238, 161, 119, .35)
+}
+
+.console-underscore {
+  margin-left: 6px;
+  animation: blink 1s infinite
+}
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1
+  }
+
+  51%,
+  100% {
+    opacity: 0
+  }
+}
+
+.pacman-home {
+  height: calc(100vh - 220px);
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.pacman-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px
+}
+
+.game-panel {
+  border: 4px solid var(--cool);
+  padding: 28px;
+  background: rgba(0, 0, 0, .28)
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  width: 100%;
+  font-size: .9rem;
+  letter-spacing: 4px
+}
+
+#gameCanvas {
+  background: #000;
+  border: 4px solid var(--cool);
+  image-rendering: pixelated;
+  box-shadow: 0 0 14px rgba(95, 115, 168, .25)
+}
+
+.game-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px
+}
+
+.message {
+  padding: 10px 20px;
+  border: 2px solid var(--warm);
+  background: rgba(238, 161, 119, .15);
+  color: var(--warm);
+  font-size: .75rem;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  min-width: 160px
+}
+
+.start-btn {
+  background: transparent;
+  border: 3px solid var(--cool);
+  color: var(--soft);
+  font-family: inherit;
+  font-size: .85rem;
+  padding: 10px 20px;
+  height: 44px;
+  min-width: 160px;
+  cursor: pointer;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .25s ease, background .25s ease
+}
+
+.start-btn:hover {
+  background: var(--cool);
+  color: #000;
+  transform: scale(1.05)
+}
+
+.restart-btn {
+  background: transparent;
+  border: 3px solid var(--cool);
+  color: var(--soft);
+  font-family: inherit;
+  font-size: 0.9rem;
+  padding: 10px 20px;
+  height: 44px;
+  min-width: 160px;
+  margin-top: 0;
+  cursor: pointer;
+  transition: background .25s ease, color .25s ease;
+  letter-spacing: 2px;
+}
+
+.restart-btn:hover {
+  background: #fff;
+  color: #000;
+  transform: none;
+}
+
+.record-panel {
+  min-width: 340px;
+  border: 4px solid var(--cool);
+  padding: 28px 30px;
+  background: rgba(0, 0, 0, .28);
+  letter-spacing: 3px
+}
+
+.record-panel h3 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 16px
+}
+
+.info-box{
+  margin-top:12px;
+  padding-top:12px;
+  border-top:2px solid var(--cool);
+  font-size:.85rem;
+  line-height:1.4;
+  letter-spacing:1px;
+}
+
+.info-box p{
+  margin:0 0 8px;
+}
+
+.info-box p:last-child{
+  margin-bottom:0;
+}
+
+.info-box strong{
+  color:var(--warm);
+}
+
+.controls-footer {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .85rem;
+  letter-spacing: 4px;
+  color: var(--cool);
+  opacity: .7
+}
+
+.stat {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 1.15rem
+}
+
+.stat span:last-child {
+  color: var(--warm)
+}
+
+/* selects in record panel */
+.record-panel select {
+  background: transparent;
+  border: 2px solid var(--cool);
+  color: var(--soft);
+  padding: 6px 8px;
+  font-family: inherit;
+}
+
+/* make reset-stats button full width and match other games */
+.record-panel .restart-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 10px 12px;
+  box-sizing: border-box;
+}
+
+/* Win / Lose animations (same behaviour as Minesweeper) */
+.game-panel.win {
+  animation: winPulse 1.2s ease-out;
+  border-color: #4dff88;
+  box-shadow: 0 0 30px rgba(77, 255, 136, .6);
+}
+
+/* also support .game-wrapper selector for exact PacMan parity */
+.game-wrapper.win {
+  animation: winPulse 1.2s ease-out;
+  border-color: #4dff88;
+  box-shadow: 0 0 30px rgba(77, 255, 136, .6);
+}
+
+@keyframes winPulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.game-panel.lose {
+  animation: loseShake .6s ease;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 30px rgba(255, 77, 77, .6);
+}
+
+.game-wrapper.lose {
+  animation: loseShake .6s ease;
+  border-color: #ff4d4d;
+  box-shadow: 0 0 30px rgba(255, 77, 77, .6);
+}
+
+@keyframes loseShake {
+  0% {
+    transform: translateX(0);
+  }
+
+  20% {
+    transform: translateX(-6px);
+  }
+
+  40% {
+    transform: translateX(6px);
+  }
+
+  60% {
+    transform: translateX(-4px);
+  }
+
+  80% {
+    transform: translateX(4px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* layout for mode/difficulty grid in record panel */
+.mode-grid .grid-label {
+  color: var(--soft);
+  font-size: .85rem;
+}
+
+.mode-grid .grid-controls select {
+  width: 100%;
+}
+
+@media (max-width: 600px) {
+
+  .mode-grid .grid-label,
+  .mode-grid .grid-controls {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* center select text */
+.mode-grid select {
+  text-align: center;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Minesweeper · Pixel Arcade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="minesweeper.css">
+</head>
+
+<body>
+  <div class="bg-grid"></div>
+
+  <header class="topbar">
+    <a href="../Startside/index.html" class="nav-back">←</a>
+    <div class="console-container hover-zone">
+      <span id="text"></span>
+      <span class="console-underscore"></span>
+      <span id="nextText" class="hidden-btn">⟳</span>
+    </div>
+  </header>
+
+  <main class="ms-home">
+    <div class="ms-wrapper">
+
+      <section class="ms-panel">
+        <div class="ms-info">
+          <select id="difficulty">
+            <option value="beginner">BEGINNER</option>
+            <option value="intermediate" selected>INTERMEDIATE</option>
+            <option value="expert">EXPERT</option>
+          </select>
+          <span id="status">READY</span>
+          <button id="restart" class="restart-btn">⟳</button>
+          <span id="timer">⏱ 000</span>
+        </div>
+        <div id="grid"></div>
+      </section>
+
+      <aside class="record-panel">
+        <h3>STATISTICS</h3>
+        <div class="stat"><span>STARTED</span><span class="value" id="stat-started">0</span></div>
+        <div class="stat"><span>WON</span><span class="value" id="stat-won">0</span></div>
+        <div class="stat"><span>WINRATE</span><span class="value" id="stat-rate">0%</span></div>
+        <hr style="margin:12px 0; opacity:.3">
+        <div class="stat"><span>BEST</span><span class="value" id="stat-best">---</span></div>
+        <div class="stat"><span>AVG</span><span class="value" id="stat-avg">---</span></div>
+        <button id="reset-stats" class="restart-btn">RESET STATS</button>
+        <div class="info-box">
+          <p><strong>ZIEL:</strong> Enthülle alle Felder ohne Minen zu finden.</p>
+          <p><strong>STEUERUNG:</strong> LMB = Feld enthüllen | RMB = Flagge setzen | R = Neustart</p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <span>LOGIC · MOUSE · SHORT</span>
+  </footer>
+
+  <script src="minesweeper.js"></script>
+</body>
+
+</html>

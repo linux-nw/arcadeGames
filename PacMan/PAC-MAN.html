@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>PAC-MAN · Pixel Arcade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="PAC-MAN.css">
+</head>
+
+<body>
+  <div class="bg-grid"></div>
+
+  <header class="topbar">
+    <a href="../Startside/index.html" class="nav-back">←</a>
+    <div class="console-container hover-zone">
+      <span id="text"></span>
+      <span class="console-underscore"></span>
+      <span id="nextText" class="hidden-btn">⟳</span>
+    </div>
+  </header>
+
+  <main class="pacman-home">
+    <div class="pacman-wrapper">
+
+      <!-- 🔥 DER KASTEN (DAS SOLL LEUCHTEN) -->
+      <!-- JS greift auf .game-wrapper -->
+      <section class="game-panel game-wrapper ms-panel">
+        <div class="game-container">
+
+          <!-- HEADER -->
+          <div class="game-header">
+            <span id="score-display">SCORE: <span id="score">0</span></span>
+            <span id="lives-display">LIVES: <span id="lives">3</span></span>
+            <span id="level-display">LEVEL: <span id="level">1</span></span>
+          </div>
+
+          <!-- ❌ NICHT animiert -->
+          <!-- NUR Spielfeld -->
+          <div class="game-field">
+            <canvas id="gameCanvas"></canvas>
+          </div>
+
+          <!-- FOOTER -->
+        <div class="game-footer">
+        <span id="message" class="message">READY!</span>
+        <button id="start-btn" class="start-btn">START</button>
+        <button id="restart-btn" class="restart-btn hidden">RESTART</button>
+        </div>
+
+
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <aside class="record-panel">
+        <h3>STATISTICS</h3>
+        <div class="stat"><span>GAMES</span><span class="value" id="stat-games">0</span></div>
+        <div class="stat"><span>WON</span><span class="value" id="stat-won">0</span></div>
+        <div class="stat"><span>WINRATE</span><span class="value" id="stat-rate">0%</span></div>
+        <hr style="margin:12px 0; opacity:.3">
+        <div class="stat"><span>HIGH SCORE</span><span class="value" id="stat-high">0</span></div>
+        <div class="stat"><span>LEVEL</span><span class="value" id="stat-level">1</span></div>
+        <button id="reset-stats" class="restart-btn">RESET STATS</button>
+
+        <div class="info-box">
+          <p><strong>ZIEL:</strong> Sammle alle Punkte ein und weiche den Geistern aus.</p>
+          <p><strong>STEUERUNG:</strong> PFEILE = Bewegen | SPACE = Start/Pause | R = Neustart</p>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+
+  <footer class="controls-footer controls-centered">
+    <span>REFLEX · KEYS · ARCADE</span>
+  </footer>
+
+  <script src="PAC-MAN.js"></script>
+</body>
+</html>

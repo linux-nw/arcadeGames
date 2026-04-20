@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>TETRIS · Pixel Arcade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Tetris.css">
+</head>
+
+<body>
+<div class="bg-grid"></div>
+
+<header class="topbar">
+  <a href="../Startside/index.html" class="nav-back">←</a>
+  <div class="console-container hover-zone">
+    <span id="text"></span>
+    <span class="console-underscore"></span>
+    <span id="nextText" class="hidden-btn">⟳</span>
+  </div>
+</header>
+
+<main class="pacman-home">
+  <div class="pacman-wrapper">
+
+    <section class="game-panel game-wrapper">
+      <div class="game-container">
+
+        <div class="game-header">
+          <span>SCORE: <span id="score">0</span></span>
+          <span>LEVEL: <span id="level">1</span></span>
+          <span>LINES: <span id="lines">0</span></span>
+        </div>
+
+        <canvas id="gameCanvas" width="300" height="600"></canvas>
+
+        <div class="game-footer">
+          <span id="message" class="message">INSERT COIN</span>
+          <button id="start-btn" class="start-btn">START</button>
+          <button id="restart-btn" class="restart-btn" tabindex="-1">RESTART</button>
+        </div>
+
+      </div>
+    </section>
+
+    <aside class="record-panel">
+      <h3>STATISTICS</h3>
+
+      <div class="preview-block">
+  <div class="preview">
+    <span>NEXT</span>
+    <canvas id="nextCanvas" width="120" height="120"></canvas>
+  </div>
+
+  <div class="preview">
+    <span>HOLD</span>
+    <canvas id="holdCanvas" width="120" height="120"></canvas>
+  </div>
+</div>
+
+
+      <div class="stat"><span>GAMES</span><span id="s-games">0</span></div>
+      <div class="stat"><span>HIGHSCORE</span><span id="s-high">0</span></div>
+      <div class="stat"><span>BEST LEVEL</span><span id="s-level">1</span></div>
+      <div class="stat"><span>LINES</span><span id="s-lines">0</span></div>
+
+      <div class="info-box">
+        <p><strong>ZIEL:</strong> Linien löschen</p>
+        <p><strong>← →</strong> Move</p>
+        <p><strong>↑</strong> Rotate</p>
+        <p><strong>↓</strong> Soft Drop</p>
+        <p><strong>SPACE</strong> Hard Drop</p>
+        <button id="reset-stats" class="restart-btn">RESET STATS</button>
+
+      </div>
+    </aside>
+
+  </div>
+</main>
+
+<footer class="controls-footer controls-centered">
+  <span>SPEED · KEYS · ENDLESS</span>
+</footer>
+
+<script src="TETRIS.js"></script>
+</body>
+</html>

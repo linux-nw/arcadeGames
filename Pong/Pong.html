@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>PONG · Pixel Arcade</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="Pong.css">
+</head>
+
+<body>
+  <div class="bg-grid"></div>
+
+  <header class="topbar">
+    <a href="../Startside/index.html" class="nav-back">←</a>
+    <div class="console-container hover-zone">
+      <span id="text" data-texts="🏓 PONG,⚡ REACTION">🏓 PONG</span>
+      <span class="console-underscore"></span>
+    </div>
+  </header>
+
+  <main class="pacman-home">
+    <div class="pacman-wrapper">
+
+      <section class="game-panel game-wrapper">
+        <div class="game-container">
+
+          <div class="game-header">
+            <span>PLAYER A: <span id="score-left">0</span> · LIVES: <span id="lives-left">3</span></span>
+            <span>PLAYER B: <span id="score-right">0</span> · LIVES: <span id="lives-right">3</span></span>
+          </div>
+
+          <canvas id="gameCanvas" width="800" height="480"></canvas>
+
+          <div class="game-footer">
+            <span id="message" class="message">PRESS START</span>
+            <button id="start-btn" class="start-btn">START</button>
+            <button id="restart-btn" class="restart-btn" tabindex="-1">RESTART</button>
+          </div>
+
+        </div>
+      </section>
+<aside class="record-panel">
+  <h3>STATISTICS</h3>
+  <div class="stat"><span>GAMES</span><span id="stat-games">0</span></div>
+  <div class="stat"><span>WON</span><span id="stat-won">0</span></div>
+  <div class="stat"><span>WINRATE</span><span id="stat-rate">0%</span></div>
+  <hr style="margin:8px 0; opacity:.3">
+  <div class="stat"><span>HIGH SCORE</span><span id="best-score">0</span></div>
+  <div class="stat"><span>LEVEL</span><span id="stat-level">1</span></div>
+
+  <button id="reset-stats" class="restart-btn">RESET STATS</button>
+
+  <div class="info-box" style="margin-top:12px;">
+    <p><strong>ZIEL:</strong> Erziele mehr Punkte als dein Gegner.</p>
+    <p><strong>STEUERUNG:</strong> ↑ / ↓ = Spieler (Standard) · P = Pause</p>
+  </div>
+</aside>
+  </aside>
+
+    </div>
+  </main>
+
+  <footer class="controls-footer controls-centered">
+    <span>REACTION · KEYS · FAST</span>
+  </footer>
+
+  <script src="../Startside/console.js"></script>
+  <script src="Pong.js"></script>
+</body>
+</html>

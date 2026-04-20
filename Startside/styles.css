@@ -1,0 +1,230 @@
+/* ================= FONT ================= */
+@font-face {
+  font-family: "PixelGame";
+  src: url("../fonts/BoldPixels.otf") format("opentype");
+}
+
+/* ================= COLORS ================= */
+:root {
+  --bg-dark: #2d1633;
+  --bg-mid: #642c53;
+  --warm: #eea177;
+  --soft: #edc6d8;
+  --cool: #5f73a8;
+}
+
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  caret-color: transparent;
+}
+
+html, body {
+  height: 100%;
+  font-size: 1.35rem;
+}
+
+body {
+  font-family: "PixelGame", system-ui, sans-serif;
+  background:
+    radial-gradient(1200px 600px at 50% -10%, var(--bg-mid), transparent 60%),
+    linear-gradient(180deg, var(--bg-mid), var(--bg-dark));
+  color: var(--soft);
+  overflow: hidden;
+}
+
+/* ================= PIXEL GRID BG ================= */
+.bg-grid {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+/* ================= HEADER / CONSOLE ================= */
+.topbar {
+  height: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.console-container {
+  display: inline-flex;
+  align-items: center;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  letter-spacing: 6px;
+  text-shadow:
+    3px 3px 0 var(--bg-dark),
+    0 0 14px rgba(238,161,119,.35);
+}
+
+.console-underscore {
+  margin-left: 6px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* ================= RELOAD ICON ================= */
+.hidden-btn {
+  margin-left: 18px;
+  font-size: 2.3rem;
+  margin-top: 30px;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity .2s ease, transform .9s ease;
+}
+
+.hover-zone:hover .hidden-btn {
+  opacity: .6;
+}
+
+.hidden-btn:hover {
+  opacity: 1;
+  transform: rotate(360deg);
+}
+
+/* ================= MAIN ================= */
+.home {
+  height: calc(100vh - 216px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ================= GAME GRID ================= */
+.game-grid {
+  width: min(1200px, 94%);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+}
+
+/* ================= GAME CARD ================= */
+.game-card {
+  position: relative;
+  padding: 48px 24px;
+  border: 4px solid var(--cool);
+  text-align: center;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.game-card::before,
+.game-card::after {
+  content:"";
+  position:absolute;
+  width:14px;
+  height:14px;
+  background: var(--warm);
+}
+
+.game-card::before { top:-4px; left:-4px; }
+.game-card::after  { bottom:-4px; right:-4px; }
+
+.game-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow:
+    0 28px 48px rgba(0,0,0,.65),
+    0 0 28px rgba(95,115,168,.45);
+}
+
+.icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+.game-card h2 {
+  font-size: 1.4rem;
+  letter-spacing: 4px;
+}
+
+.accent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--warm), var(--soft), var(--cool));
+  opacity: .8;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  height: 56px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:.85rem;
+  letter-spacing: 3px;
+  color: var(--cool);
+  opacity:.65;
+}
+
+/* ================= SELECTION ================= */
+::selection {
+  background: rgba(238,161,119,.35);
+  color: var(--bg-dark);
+}
+
+/* ================= 1️⃣ GAME CARD ACTION ================= */
+.game-card {
+  cursor: pointer;
+}
+
+.game-card:hover {
+  transform: translateY(-10px) scale(1.03);
+}
+
+/* ================= 2️⃣ HOVER META INFO ================= */
+.meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 14px;
+  font-size: .75rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity .25s ease, transform .25s ease;
+}
+
+.game-card:hover .meta {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.game-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* ================= 3️⃣ BOOT TRANSITION ================= */
+.game-card::after {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.9);
+  color: #39ff14;
+  font-family: monospace;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .25s ease;
+}
+
+.game-card:active::after {
+  opacity: 1;
+}
