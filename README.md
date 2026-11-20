@@ -1,22 +1,39 @@
-## ARcade
+# ARcade
 
-ARcade is a collection of classic browser games built with HTML, CSS and JavaScript. It includes well-known titles like 2048, Minesweeper, PacMan, Pong, Snake and Tetris, all accessible from a shared start page.
+**Status:** 🟢 Aktiv
 
-## Features
-1. Play 6 classic arcade games directly in the browser
-2. Shared start page for easy navigation
-3. No installation or dependencies required
-4. Runs fully offline as static files
+Sammlung klassischer Browser-Spiele (HTML, CSS, JavaScript): 2048, Minesweeper, PacMan, Pong, Snake und Tetris, alle über eine gemeinsame Startseite erreichbar.
 
-## Usage
-1. Clone or download the repository
-2. Open `index.html` in any modern browser
-3. Select a game from the start page and play
+**Name:** Arcade ist die Spielhalle, in der diese Klassiker früher standen.
 
-## Notes
-- No frameworks or build tools used
-- Each game is self-contained in its own folder
-- Designed for desktop browsers
+---
 
-## License
-MIT License
+## Nutzung
+
+1. Repo klonen oder herunterladen.
+2. `Startside/index.html` in einem aktuellen Desktop-Browser öffnen.
+3. Spiel auswählen und losspielen.
+
+Es braucht keine Installation und keine Abhängigkeiten.
+
+---
+
+## Repo-Struktur
+
+```
+Startside/   Startseite mit Spieleauswahl
+2048/  Minesweeper/  PacMan/  Pong/  Snake/  Tetris/   je ein Spiel (HTML, CSS, JS)
+fonts/       lokale Schrift
+```
+
+---
+
+## Datenschutz
+
+Läuft offline als statische Dateien, es wird nichts übertragen.
+
+---
+
+## Lizenz
+
+[MIT](LICENSE)
