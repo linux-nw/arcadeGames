@@ -36,4 +36,4 @@ Runs offline as static files, nothing is transmitted.
 
 ## License
 
-[MIT](LICENSE)
+[PolyForm Noncommercial 1.0.0](LICENSE). Personal and non-commercial use is free. For commercial use, please get in touch.
