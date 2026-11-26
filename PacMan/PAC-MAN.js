@@ -2,10 +2,10 @@
 
 
 const DIRS = [
-    { x: 1, y: 0 },   // 0 rechts
-    { x: 0, y: 1 },   // 1 runter
-    { x: -1, y: 0 },   // 2 links
-    { x: 0, y: -1 }   // 3 hoch
+    { x: 1, y: 0 },   // 0 right
+    { x: 0, y: 1 },   // 1 down
+    { x: -1, y: 0 },   // 2 left
+    { x: 0, y: -1 }   // 3 up
 ];
 
 const DIR_ANGLES = [
@@ -244,7 +244,7 @@ const ghosts = [
 function isWall(x, y) {
     if (y < 0 || y >= maze.length || x < 0 || x >= maze[0].length) return true;
 
-    // Ghost-House (3) blockiert Pac-Man
+    // Ghost house (3) blocks Pac-Man
     if (maze[y][x] === 3) return true;
 
     return maze[y][x] === 1;
@@ -341,7 +341,7 @@ function movePacman() {
         pacman.y += d.y;
     }
 
-    // Pellet fressen
+    // Eat pellet
     const pellet = pellets.find(
         p => !p.eaten && p.x === pacman.x && p.y === pacman.y
     );
@@ -353,8 +353,7 @@ function movePacman() {
         updatePelletCount();
     }
 
-    // Tunnel (Original Pac-Man)
-    // Tunnel (Original)
+    // Tunnel (as in the original)
     if (pacman.y === 10 && pacman.x === 0 && pacman.direction === 2) {
         pacman.x = COLS - 1;
     }
@@ -505,7 +504,7 @@ function loseLife() {
         pacman.nextDirection = 0;
 
         gamePaused = false;
-        hitCooldown = false;   // 🔓 WICHTIG
+        hitCooldown = false;   // important: unlock collision handling
         updateMessage("IN GAME");
     },300);
 }
@@ -641,7 +640,7 @@ function gameLoop() {
         if (frameCount % pacmanSpeed === 0) movePacman();
         if (frameCount % ghostSpeed === 0) ghosts.forEach(g => moveGhost(g));
 
-        checkGhostCollision(); // ⬅ IMMER prüfen
+        checkGhostCollision(); // always check
 
 
         draw();
@@ -653,7 +652,7 @@ function gameLoop() {
 
 /* ================= CONTROLS ================= */
 document.addEventListener("keydown", (e) => {
-if (gameEnded) return;   // ⬅ DAS FEHLT
+if (gameEnded) return;   // required
     if (e.key === " ") {
         e.preventDefault();
         if (!gameRunning) startGame();
@@ -698,7 +697,7 @@ function checkGhostCollision() {
 }
 
 document.getElementById("start-btn").addEventListener("click", () => {
-        if (gameEnded) return;   // ⬅ DAS FEHLT
+        if (gameEnded) return;   // required
     if (!gameRunning) {
         startGame();
     } else {

@@ -35,7 +35,7 @@ html, body {
 }
 
 /* ================= ANIMATIONS ================= */
-/* Grundzustand */
+/* Base state */
 .game-wrapper {
   border: 3px solid rgba(255,255,255,.2);
   border-radius: 12px;

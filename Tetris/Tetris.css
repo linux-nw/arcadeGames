@@ -224,7 +224,7 @@ body {
   transform: none;
 }
 
-/* ================= STATS (IDENTISCH ZU MINESWEEPER) ================= */
+/* ================= STATS (IDENTICAL TO MINESWEEPER) ================= */
 .record-panel {
   min-width: 240px;
   border: 4px solid var(--cool);
@@ -250,7 +250,7 @@ body {
   color: var(--warm);
 }
 
-/* ================= INFO BOX (GLEICHER LOOK) ================= */
+/* ================= INFO BOX (SAME LOOK) ================= */
 .info-box {
   margin-top: 16px;
   padding-top: 12px;

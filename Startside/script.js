@@ -107,7 +107,7 @@ const colors = [
   typeText(texts[index], colors[index % colors.length]);
   resetInterval();
 
-  // Klick = nächster + Timer reset
+  // Click = next + reset timer
   textEl.addEventListener("click", () => {
     nextText();
     resetInterval();

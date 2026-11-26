@@ -500,7 +500,7 @@ function lockPiece() {
 
     piece = createPiece();
 
-    // 💀 GAME OVER CHECK
+    // GAME OVER CHECK
     if (collide()) {
         gameOver();
         return;
